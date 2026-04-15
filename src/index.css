@@ -30,9 +30,16 @@
   box-sizing: border-box;
 }
 
+html {
+  /* Anchor jumps + sticky nav: section titles stay below the bar on iPhone */
+  scroll-padding-top: calc(4.75rem + env(safe-area-inset-top, 0px));
+}
+
 body {
   margin: 0;
   min-height: 100svh;
+  /* iOS: avoid horizontal rubber-band exposing empty space */
+  overflow-x: hidden;
 }
 
 #root {
