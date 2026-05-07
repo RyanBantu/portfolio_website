@@ -209,7 +209,7 @@ export const windscapesProject: ExperienceEntry = {
 }
 
 export const latestProblemNote =
-  "This spring I was in Michigan visiting my sister and family friends. One of them runs a landscaping company with 3,000+ trees across 4 different departments — and big inventory headaches. It was a fun problem to solve. I got to use cool tools and bridge hardware and software (barcode printers, scanners) by writing custom SDKs in .NET and Java to make the whole flow click."
+  "Last fall I saw my family running into a real inventory problem in their landscaping business — 3,000+ trees across 4 different departments. After sorting out US compliance, I flew back to India, built the software, turned it into a web app, and shipped it over to them. When I visited this spring, I was proud to see them actually using it day-to-day."
 
 export const latestProblemPhotos: { src: string; caption: string; alt: string }[] = [
   {
