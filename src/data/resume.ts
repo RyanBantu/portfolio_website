@@ -237,6 +237,11 @@ export const latestProblemPhotos: { src: string; caption: string; alt: string }[
     caption: 'Greenhouse — flowering stock tracked in the same platform',
     alt: 'Inside a Windscapes greenhouse with rows of flowering plants',
   },
+  {
+    src: '/images/windscapes-spruce.png',
+    caption: 'Tagged spruce in the field — single-stock SKU lookup',
+    alt: 'A blue spruce tree in a Windscapes nursery with a yellow inventory tag',
+  },
 ]
 
 export const experience: ExperienceEntry[] = [
