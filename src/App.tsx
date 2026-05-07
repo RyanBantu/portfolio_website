@@ -135,9 +135,9 @@ function App() {
       </Section>
 
       <Section
-        id="fun-project"
-        title="Fun project work"
-        subtitle="Side build outside the day-job stack"
+        id="cool-projects"
+        title="Cool projects"
+        subtitle="Side builds outside the day-job stack"
       >
         <article className="exp-card">
           <header>
