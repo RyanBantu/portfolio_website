@@ -657,62 +657,6 @@
   padding-bottom: 1rem;
 }
 
-.latest-problem-note {
-  max-width: 60rem;
-  margin: 0 0 1.25rem;
-}
-
-.latest-problem-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 1.25rem;
-}
-
-@media (max-width: 900px) {
-  .latest-problem-gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 600px) {
-  .latest-problem-gallery {
-    grid-template-columns: 1fr;
-  }
-}
-
-.latest-problem-photo-wrap {
-  margin: 0;
-  padding: 0;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  background: var(--bg-card);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
-  display: flex;
-  flex-direction: column;
-}
-
-.latest-problem-photo {
-  display: block;
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  vertical-align: middle;
-}
-
-.latest-problem-photo-caption {
-  margin: 0;
-  padding: 0.65rem 1rem;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
-  color: var(--text-dim);
-  text-align: center;
-  border-top: 1px solid var(--border);
-  background: rgba(15, 23, 42, 0.5);
-}
-
 .exp-stack {
   display: grid;
   gap: 1rem;

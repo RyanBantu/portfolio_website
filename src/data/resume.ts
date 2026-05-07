@@ -198,52 +198,6 @@ type ExperienceEntry = {
   bullets: string[]
 }
 
-export const windscapesProject: ExperienceEntry = {
-  company: 'Windscapes Landscaping',
-  location: 'MI, USA',
-  role: 'AI Engineer and Software Developer (fun project work)',
-  period: '12/2025 – 03/2026',
-  bullets: [
-    'Enterprise inventory platform — 64% efficiency gain; IoT Flutter apps (Admin & Employee), FastAPI, React, AWS; edge RFID (Raspberry Pi & Arduino) for workforce tracking and automated payroll.',
-  ],
-}
-
-export const latestProblemNote =
-  "Last fall I saw family friends running into a real inventory problem in their landscaping business — 3,000+ trees across 4 different departments. After sorting out US compliance, I flew back to India, built the software, turned it into a web app, and shipped it over to them. When I visited this spring, I was proud to see them actually using it day-to-day."
-
-export const latestProblemPhotos: { src: string; caption: string; alt: string }[] = [
-  {
-    src: '/images/windscapes-dashboard.png',
-    caption: 'Dashboard build — inventory + workforce console at the workshop',
-    alt: 'Ryan smiling next to a monitor showing the Windscapes inventory dashboard in the workshop',
-  },
-  {
-    src: '/images/windscapes-barcodes.png',
-    caption: 'Custom yellow barcode tags printed for nursery stock',
-    alt: 'Sheets of yellow barcode tags printed for tree inventory at Windscapes',
-  },
-  {
-    src: '/images/windscapes-tree-tag.png',
-    caption: 'White Tandeski tag in the field — scanned to update inventory',
-    alt: 'White inventory tag tied to a sapling at a Windscapes nursery field',
-  },
-  {
-    src: '/images/windscapes-nursery-row.png',
-    caption: 'Tagged nursery rows — yellow ribbons mark scanned trees',
-    alt: 'Rows of trees with yellow ribbon tags at a nursery field',
-  },
-  {
-    src: '/images/windscapes-greenhouse.png',
-    caption: 'Greenhouse — flowering stock tracked in the same platform',
-    alt: 'Inside a Windscapes greenhouse with rows of flowering plants',
-  },
-  {
-    src: '/images/windscapes-spruce.png',
-    caption: 'Tagged spruce in the field — single-stock SKU lookup',
-    alt: 'A blue spruce tree in a Windscapes nursery with a yellow inventory tag',
-  },
-]
-
 export const experience: ExperienceEntry[] = [
   {
     company: 'Manipal Dot Net Pvt Ltd',
