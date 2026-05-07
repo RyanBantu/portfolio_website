@@ -190,7 +190,15 @@ export const projects = [
   },
 ]
 
-export const sideProject = {
+type ExperienceEntry = {
+  company: string
+  location?: string
+  role: string
+  period: string
+  bullets: string[]
+}
+
+export const windscapesProject: ExperienceEntry = {
   company: 'Windscapes Landscaping',
   location: 'MI, USA',
   role: 'AI Engineer and Software Developer (fun project work)',
@@ -200,7 +208,7 @@ export const sideProject = {
   ],
 }
 
-export const experience = [
+export const experience: ExperienceEntry[] = [
   {
     company: 'Manipal Dot Net Pvt Ltd',
     role: 'Internship',

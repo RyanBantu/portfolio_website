@@ -10,7 +10,6 @@ import {
   solarDecathlonAchievement,
   education,
   experience,
-  sideProject,
   goperch,
   profile,
   projects,
@@ -20,6 +19,7 @@ import {
   guestLecturePhotos,
   communityTeachingPhoto,
   manipalWorkshopPhotos,
+  windscapesProject,
 } from './data/resume'
 
 function App() {
@@ -134,28 +134,39 @@ function App() {
         </ul>
       </Section>
 
-      <Section id="experience" title="Professional experience" subtitle="From defense composites to clinical AI">
-        <article className="exp-card side-project">
+      <Section
+        id="fun-project"
+        title="Fun project work"
+        subtitle="Side build outside the day-job stack"
+      >
+        <article className="exp-card">
           <header>
             <h3>
-              {sideProject.company}
-              {sideProject.location ? <span className="muted"> · {sideProject.location}</span> : null}
+              {windscapesProject.company}
+              {windscapesProject.location ? (
+                <span className="muted"> · {windscapesProject.location}</span>
+              ) : null}
             </h3>
-            <p className="role">{sideProject.role}</p>
-            <p className="period">{sideProject.period}</p>
+            <p className="role">{windscapesProject.role}</p>
+            <p className="period">{windscapesProject.period}</p>
           </header>
           <ul>
-            {sideProject.bullets.map((b) => (
+            {windscapesProject.bullets.map((b) => (
               <li key={b}>{b}</li>
             ))}
           </ul>
         </article>
+      </Section>
 
+      <Section id="experience" title="Professional experience" subtitle="From defense composites to clinical AI">
         <div className="exp-stack">
           {experience.map((job) => (
             <article key={`${job.company}-${job.period}`} className="exp-card">
               <header>
-                <h3>{job.company}</h3>
+                <h3>
+                  {job.company}
+                  {job.location ? <span className="muted"> · {job.location}</span> : null}
+                </h3>
                 <p className="role">{job.role}</p>
                 <p className="period">{job.period}</p>
               </header>
