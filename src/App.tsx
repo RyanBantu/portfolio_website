@@ -71,7 +71,6 @@ function App() {
               ) : null}
             </h3>
             <p className="role">{windscapesProject.role}</p>
-            <p className="period">{windscapesProject.period}</p>
           </header>
           <ul>
             {windscapesProject.bullets.map((b) => (
