@@ -10,6 +10,7 @@ import {
   solarDecathlonAchievement,
   education,
   experience,
+  sideProject,
   goperch,
   profile,
   projects,
@@ -134,14 +135,27 @@ function App() {
       </Section>
 
       <Section id="experience" title="Professional experience" subtitle="From defense composites to clinical AI">
+        <article className="exp-card side-project">
+          <header>
+            <h3>
+              {sideProject.company}
+              {sideProject.location ? <span className="muted"> · {sideProject.location}</span> : null}
+            </h3>
+            <p className="role">{sideProject.role}</p>
+            <p className="period">{sideProject.period}</p>
+          </header>
+          <ul>
+            {sideProject.bullets.map((b) => (
+              <li key={b}>{b}</li>
+            ))}
+          </ul>
+        </article>
+
         <div className="exp-stack">
           {experience.map((job) => (
             <article key={`${job.company}-${job.period}`} className="exp-card">
               <header>
-                <h3>
-                  {job.company}
-                  {job.location ? <span className="muted"> · {job.location}</span> : null}
-                </h3>
+                <h3>{job.company}</h3>
                 <p className="role">{job.role}</p>
                 <p className="period">{job.period}</p>
               </header>

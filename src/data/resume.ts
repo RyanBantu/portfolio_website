@@ -190,16 +190,17 @@ export const projects = [
   },
 ]
 
+export const sideProject = {
+  company: 'Windscapes Landscaping',
+  location: 'MI, USA',
+  role: 'AI Engineer and Software Developer (fun project work)',
+  period: '12/2025 – 03/2026',
+  bullets: [
+    'Enterprise inventory platform — 64% efficiency gain; IoT Flutter apps (Admin & Employee), FastAPI, React, AWS; edge RFID (Raspberry Pi & Arduino) for workforce tracking and automated payroll.',
+  ],
+}
+
 export const experience = [
-  {
-    company: 'Windscapes Landscaping',
-    location: 'MI, USA',
-    role: 'AI Engineer',
-    period: '03/2026 – Present',
-    bullets: [
-      'Enterprise inventory platform — 64% efficiency gain; IoT Flutter apps (Admin & Employee), FastAPI, React, AWS; edge RFID (Raspberry Pi & Arduino) for workforce tracking and automated payroll.',
-    ],
-  },
   {
     company: 'Manipal Dot Net Pvt Ltd',
     role: 'Internship',
