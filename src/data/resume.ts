@@ -208,6 +208,37 @@ export const windscapesProject: ExperienceEntry = {
   ],
 }
 
+export const latestProblemNote =
+  "This spring I was in Michigan visiting my sister and family friends. One of them runs a landscaping company with 3,000+ trees across 4 different departments — and big inventory headaches. It was a fun problem to solve. I got to use cool tools and bridge hardware and software (barcode printers, scanners) by writing custom SDKs in .NET and Java to make the whole flow click."
+
+export const latestProblemPhotos: { src: string; caption: string; alt: string }[] = [
+  {
+    src: '/images/windscapes-dashboard.png',
+    caption: 'Dashboard build — inventory + workforce console at the workshop',
+    alt: 'Ryan smiling next to a monitor showing the Windscapes inventory dashboard in the workshop',
+  },
+  {
+    src: '/images/windscapes-barcodes.png',
+    caption: 'Custom yellow barcode tags printed for nursery stock',
+    alt: 'Sheets of yellow barcode tags printed for tree inventory at Windscapes',
+  },
+  {
+    src: '/images/windscapes-tree-tag.png',
+    caption: 'White Tandeski tag in the field — scanned to update inventory',
+    alt: 'White inventory tag tied to a sapling at a Windscapes nursery field',
+  },
+  {
+    src: '/images/windscapes-nursery-row.png',
+    caption: 'Tagged nursery rows — yellow ribbons mark scanned trees',
+    alt: 'Rows of trees with yellow ribbon tags at a nursery field',
+  },
+  {
+    src: '/images/windscapes-greenhouse.png',
+    caption: 'Greenhouse — flowering stock tracked in the same platform',
+    alt: 'Inside a Windscapes greenhouse with rows of flowering plants',
+  },
+]
+
 export const experience: ExperienceEntry[] = [
   {
     company: 'Manipal Dot Net Pvt Ltd',

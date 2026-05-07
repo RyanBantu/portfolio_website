@@ -20,6 +20,8 @@ import {
   communityTeachingPhoto,
   manipalWorkshopPhotos,
   windscapesProject,
+  latestProblemNote,
+  latestProblemPhotos,
 } from './data/resume'
 
 function App() {
@@ -53,6 +55,45 @@ function App() {
           </motion.div>
         </div>
       </section>
+
+      <Section
+        id="latest-problem"
+        title="Latest problem solved"
+        subtitle="A spring trip to Michigan that turned into an inventory platform"
+      >
+        <p className="block-text latest-problem-note">{latestProblemNote}</p>
+        <article className="exp-card">
+          <header>
+            <h3>
+              {windscapesProject.company}
+              {windscapesProject.location ? (
+                <span className="muted"> · {windscapesProject.location}</span>
+              ) : null}
+            </h3>
+            <p className="role">{windscapesProject.role}</p>
+            <p className="period">{windscapesProject.period}</p>
+          </header>
+          <ul>
+            {windscapesProject.bullets.map((b) => (
+              <li key={b}>{b}</li>
+            ))}
+          </ul>
+        </article>
+        <div className="latest-problem-gallery" aria-label="Photos from Windscapes Landscaping">
+          {latestProblemPhotos.map((ph) => (
+            <figure key={ph.src} className="latest-problem-photo-wrap">
+              <img
+                className="latest-problem-photo"
+                src={ph.src}
+                alt={ph.alt}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption className="latest-problem-photo-caption">{ph.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </Section>
 
       <Section id="about" title="Research focus" subtitle="Where engineering meets intelligent systems">
         <p className="block-text">
@@ -132,30 +173,6 @@ function App() {
             <li key={a}>{a}</li>
           ))}
         </ul>
-      </Section>
-
-      <Section
-        id="cool-projects"
-        title="Cool projects"
-        subtitle="Side builds outside the day-job stack"
-      >
-        <article className="exp-card">
-          <header>
-            <h3>
-              {windscapesProject.company}
-              {windscapesProject.location ? (
-                <span className="muted"> · {windscapesProject.location}</span>
-              ) : null}
-            </h3>
-            <p className="role">{windscapesProject.role}</p>
-            <p className="period">{windscapesProject.period}</p>
-          </header>
-          <ul>
-            {windscapesProject.bullets.map((b) => (
-              <li key={b}>{b}</li>
-            ))}
-          </ul>
-        </article>
       </Section>
 
       <Section id="experience" title="Professional experience" subtitle="From defense composites to clinical AI">
