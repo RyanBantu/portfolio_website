@@ -209,7 +209,7 @@ export const windscapesProject: ExperienceEntry = {
 }
 
 export const latestProblemNote =
-  "Last fall I saw my family running into a real inventory problem in their landscaping business — 3,000+ trees across 4 different departments. After sorting out US compliance, I flew back to India, built the software, turned it into a web app, and shipped it over to them. When I visited this spring, I was proud to see them actually using it day-to-day."
+  "Last fall I saw family friends running into a real inventory problem in their landscaping business — 3,000+ trees across 4 different departments. After sorting out US compliance, I flew back to India, built the software, turned it into a web app, and shipped it over to them. When I visited this spring, I was proud to see them actually using it day-to-day."
 
 export const latestProblemPhotos: { src: string; caption: string; alt: string }[] = [
   {
