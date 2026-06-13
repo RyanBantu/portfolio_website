@@ -1,10 +1,19 @@
 export const profile = {
-  name: 'Ryan Elisha Bantu',
-  roles: ['AI Systems Engineer', 'LLM Systems Engineer', 'Full-Stack Engineer'],
+  name: 'Ryan Bantu',
+  fullName: 'Ryan Elisha Bantu',
+  roles: ['Founder', 'Engineer', 'Builder'],
   headline:
-    'AI & Systems Architect — research-driven problem solver specializing in embedded AI and intelligent systems.',
+    'Designing autonomous systems at the intersection of robotics, embedded intelligence, and computer vision.',
   summary:
-    'Designed and experimentally validated Edge AI pipelines (YOLO-based Re-ID) for real-world, resource-constrained environments. Proven ability to translate research into scalable, production-grade deployments across 40+ enterprise environments. Experienced in cloud-native system design (AWS Bedrock) and scalable ML infrastructure.',
+    'From edge inference on Raspberry Pi to production LLM orchestration — I build hardware-aware software and software-defined hardware. Founder of GoPerch Innovations; 40+ enterprise deployments across wildlife monitoring, clinical AI, and industrial automation.',
+  focusAreas: [
+    'Robotics',
+    'Embedded Systems',
+    'AI',
+    'Computer Vision',
+    'Automation',
+    'EECS',
+  ],
   researchInterests: [
     'Edge AI',
     'Embedded ML Systems',
@@ -70,7 +79,7 @@ export const entrepreneurAward = {
     "Felicitated for being one of the best entrepreneurs — MAHE Innovation Centre, Startup Founder's Felicitation Ceremony 2025; Certificate of Excellence for founding GoPerch Innovations (P) Ltd.",
   photos: [
     {
-      src: '/images/award-felicitation-ceremony.png',
+      src: '/images/award-felicitation-ceremony.jpeg',
       alt: "Ryan Bantu receiving an award at MAHE Startup Founder's Felicitation Ceremony 2025",
     },
     {
@@ -103,16 +112,74 @@ export const achievements = [
   'Forbes Marshall Award: Runner-up for excellence in academic projects advancing energy and sustainability.',
 ]
 
-export const researchItems = [
+export type ResearchManuscript = {
+  title: string
+  body: string
+  status: 'Under review'
+  domain: string
+  code: string
+  tags: string[]
+}
+
+export const researchItems: ResearchManuscript[] = [
   {
     title: 'EEG-Based Phoneme Extraction for Cerebral Palsy Communication',
     body:
-      'Designed and trained deep learning models on EEG signals (Caravan Dataset) for phoneme-level representations. Signal preprocessing, feature extraction, and evaluation under noise — enabling interpretable mappings for thought-to-speech synthesis. Paper under review.',
+      'Designed and trained deep learning models on EEG signals (Caravan Dataset) for phoneme-level representations. Signal preprocessing, feature extraction, and evaluation under noise — enabling interpretable mappings for thought-to-speech synthesis.',
+    status: 'Under review',
+    domain: 'Multimodal Learning',
+    code: 'EEG-PHON',
+    tags: ['EEG', 'Deep Learning', 'Phoneme Extraction', 'Assistive Tech'],
   },
   {
     title: 'Edge-Computing Telemetry System for Emergency Care',
     body:
-      'Real-time edge telemetry for ambulance diagnostics: low-latency vitals pipelines, performance under network latency and hardware constraints for pre-arrival clinical insights. Paper under review.',
+      'Real-time edge telemetry for ambulance diagnostics: low-latency vitals pipelines, performance under network latency and hardware constraints for pre-arrival clinical insights.',
+    status: 'Under review',
+    domain: 'Real-Time Inference',
+    code: 'EDGE-EMS',
+    tags: ['Edge Computing', 'Telemetry', 'Emergency Care', 'Low Latency'],
+  },
+]
+
+export type ProjectBuild = {
+  name: string
+  desc: string
+  url?: string
+  type: 'Software' | 'Hardware' | 'ML'
+  stack: string[]
+  metric?: string
+  featured?: boolean
+}
+
+export const projects: ProjectBuild[] = [
+  {
+    name: 'Project VAYU',
+    desc: 'Award-winning retrofit cooling device — CFD with ANSYS Fluent, structural optimization in Altair OptiStruct, and field-tested thermal performance.',
+    type: 'Hardware',
+    stack: ['ANSYS Fluent', 'OptiStruct', 'CFD', 'Product Design'],
+    metric: '10 sold · 20+ pre-orders',
+    featured: true,
+  },
+  {
+    name: 'SYPE',
+    desc: 'React-based communication tool for autistic mute children — structured daily interaction flows for non-verbal users and caregivers.',
+    url: 'https://sype.vercel.app',
+    type: 'Software',
+    stack: ['React', 'Accessibility', 'UX'],
+    metric: '4 active users',
+  },
+  {
+    name: 'MIT Manipal Smart Parking',
+    desc: 'Geo-fencing and geo-tagging app for verified spot reservations and real-time parking flow across campus lots.',
+    type: 'Software',
+    stack: ['Geo-fencing', 'Mobile', 'Real-time'],
+  },
+  {
+    name: 'Titanic Survival Prediction',
+    desc: 'Random Forest classifier with algorithm math grounded in Stanford CS229 — trained on a Kaggle-derived passenger dataset.',
+    type: 'ML',
+    stack: ['Random Forests', 'Python', 'CS229'],
   },
 ]
 
@@ -170,26 +237,6 @@ export const goperch = {
   ],
 }
 
-export const projects = [
-  {
-    name: 'SYPE (Social Impact)',
-    url: 'https://sype.vercel.app',
-    desc: 'React-based communication tool for autistic mute children — 4 active users for daily interaction.',
-  },
-  {
-    name: 'MIT Manipal Smart Parking',
-    desc: 'Geo-fencing and geo-tagging app for verified spot reservations and real-time parking flow.',
-  },
-  {
-    name: 'Project VAYU (Hardware/CFD)',
-    desc: 'Award-winning cooling device; ANSYS Fluent & Altair OptiStruct; 10 units sold, 20+ pre-orders.',
-  },
-  {
-    name: 'Titanic Survival Prediction',
-    desc: 'Random Forests; algorithm math from Stanford CS229; Kaggle-derived dataset.',
-  },
-]
-
 type ExperienceEntry = {
   company: string
   location?: string
@@ -199,6 +246,17 @@ type ExperienceEntry = {
 }
 
 export const experience: ExperienceEntry[] = [
+  {
+    company: 'Windscapes Landscaping',
+    location: 'MI, USA',
+    role: 'Software Engineer',
+    period: '03/2026 – Present',
+    bullets: [
+      'Built custom ERP software for inventory, work orders, and order tracking, with sales analytics and employee management for daily payroll.',
+      'Deployed and hosted the platform on AWS EC2 for production use.',
+      'Integrated barcode scanner hardware so inventory scans update stock levels automatically and keep inventory management in sync.',
+    ],
+  },
   {
     company: 'Manipal Dot Net Pvt Ltd',
     role: 'Internship',

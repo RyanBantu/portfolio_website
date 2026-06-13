@@ -1,0 +1,305 @@
+.capabilities {
+  display: grid;
+  gap: 2rem;
+}
+
+.capabilities__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.capabilities__stat {
+  flex: 1 1 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg);
+}
+
+.capabilities__stat strong {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--white);
+}
+
+.capabilities__stat span {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.capabilities__shell {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  min-height: 480px;
+}
+
+/* — Nav tabs — */
+.capabilities__nav {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+.capabilities__tab {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 0.15rem 0.75rem;
+  align-items: start;
+  padding: 1.25rem 1.15rem;
+  text-align: left;
+  color: inherit;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.capabilities__tab:last-child {
+  border-bottom: none;
+}
+
+.capabilities__tab:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.capabilities__tab--active {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.capabilities__tab-glow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--white);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.45);
+}
+
+.capabilities__tab-index {
+  grid-row: 1 / span 3;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  padding-top: 0.15rem;
+}
+
+.capabilities__tab--active .capabilities__tab-index {
+  color: var(--white);
+}
+
+.capabilities__tab-code {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.capabilities__tab--active .capabilities__tab-code {
+  color: var(--white);
+}
+
+.capabilities__tab-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-muted);
+}
+
+.capabilities__tab--active .capabilities__tab-title {
+  color: var(--white);
+}
+
+.capabilities__tab-count {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+}
+
+/* — Stage panel — */
+.capabilities__stage {
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.04), transparent 45%),
+    var(--bg);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.capabilities__panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.capabilities__panel-head {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.capabilities__panel-code {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  color: var(--white);
+}
+
+.capabilities__panel-title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--white);
+}
+
+.capabilities__panel-blurb {
+  margin: 0;
+  max-width: 38rem;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.capabilities__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.capabilities__chip {
+  display: inline-flex;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.03em;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.02);
+  transition: background 0.2s ease, border-color 0.2s ease;
+  cursor: default;
+}
+
+.capabilities__chip:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.capabilities__meter {
+  margin-top: auto;
+}
+
+.capabilities__meter-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.capabilities__meter-track {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.capabilities__meter-fill {
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.35), var(--white));
+  transform-origin: left center;
+}
+
+.capabilities__matrix {
+  display: flex;
+  gap: 2px;
+  margin-top: 1.5rem;
+  height: 4px;
+}
+
+.capabilities__matrix-cell {
+  min-width: 8px;
+  padding: 0;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  opacity: 0.45;
+  cursor: pointer;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.capabilities__matrix-cell--active,
+.capabilities__matrix-cell:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+@media (max-width: 900px) {
+  .capabilities__shell {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .capabilities__nav {
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .capabilities__tab {
+    flex: 0 0 min(220px, 75vw);
+    scroll-snap-align: start;
+    border-bottom: none;
+    border-right: 1px solid var(--line);
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .capabilities__tab-index {
+    grid-row: auto;
+  }
+
+  .capabilities__tab-glow {
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    width: auto;
+    height: 2px;
+  }
+}
+
+@media (max-width: 560px) {
+  .capabilities__stat {
+    flex: 1 1 100%;
+  }
+}

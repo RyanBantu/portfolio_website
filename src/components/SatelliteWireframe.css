@@ -1,0 +1,44 @@
+.satellite {
+  position: relative;
+  display: grid;
+  place-items: center;
+  perspective: 900px;
+}
+
+.satellite--interactive {
+  cursor: crosshair;
+}
+
+.satellite__orbit-ring {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.satellite__orbit-ring--outer {
+  width: min(420px, 90vw);
+  height: min(420px, 90vw);
+  animation: orbit-spin 48s linear infinite;
+}
+
+.satellite__orbit-ring--inner {
+  width: min(300px, 70vw);
+  height: min(300px, 70vw);
+  border-style: dashed;
+  animation: orbit-spin 32s linear infinite reverse;
+}
+
+.satellite--compact .satellite__orbit-ring {
+  display: none;
+}
+
+.satellite__svg {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.06));
+}
+
+@keyframes orbit-spin {
+  to { transform: rotate(360deg); }
+}

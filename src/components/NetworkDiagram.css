@@ -1,0 +1,121 @@
+.network {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.network__canvas {
+  position: relative;
+  aspect-ratio: 1;
+  max-width: 420px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.02), transparent),
+    var(--bg-panel);
+  overflow: hidden;
+}
+
+.network__canvas::before,
+.network__canvas::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+}
+
+.network__canvas::before {
+  top: 12px;
+  left: 12px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.network__canvas::after {
+  bottom: 12px;
+  right: 12px;
+  border-left: none;
+  border-top: none;
+}
+
+.network__svg {
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+}
+
+.network__node {
+  cursor: pointer;
+}
+
+.network__readout {
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+}
+
+.network__readout-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.35rem;
+}
+
+.network__readout-desc {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.network__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.network__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: border-color 0.25s, color 0.25s, background 0.25s;
+}
+
+.network__tag:hover,
+.network__tag--active {
+  border-color: var(--line-strong);
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.network__tag-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text-faint);
+  transition: background 0.25s, box-shadow 0.25s;
+}
+
+.network__tag--active .network__tag-dot,
+.network__tag:hover .network__tag-dot {
+  background: var(--white);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}

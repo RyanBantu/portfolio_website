@@ -1,0 +1,116 @@
+.section {
+  position: relative;
+  z-index: 1;
+  width: var(--container);
+  margin: 0 auto;
+  padding: var(--section-gap) 0;
+  scroll-margin-top: calc(var(--nav-h) + env(safe-area-inset-top, 0px));
+}
+
+.section--editorial .section__grid {
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 5vw, 3.5rem);
+}
+
+.section--editorial .section__aside {
+  position: static;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.section--editorial .section__subtitle {
+  max-width: 28rem;
+  text-align: right;
+  margin-left: auto;
+}
+
+@media (max-width: 860px) {
+  .section--editorial .section__subtitle {
+    text-align: left;
+    margin-left: 0;
+  }
+}
+
+.section--wide .section__body {
+  max-width: none;
+}
+
+.section--full {
+  width: 100%;
+  max-width: none;
+  padding-left: max(1.5rem, env(safe-area-inset-left));
+  padding-right: max(1.5rem, env(safe-area-inset-right));
+}
+
+.section__grid {
+  display: grid;
+  grid-template-columns: minmax(200px, 280px) 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.section__aside {
+  position: sticky;
+  top: calc(var(--nav-h) + 2rem);
+}
+
+.section__index-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.section__index {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  color: var(--text-muted);
+}
+
+.section__rule {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--line-strong), transparent);
+}
+
+.section__title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--white);
+}
+
+.section__subtitle {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 18rem;
+}
+
+.section__body {
+  min-width: 0;
+}
+
+@media (max-width: 860px) {
+  .section__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .section__aside {
+    position: static;
+  }
+
+  .section__subtitle {
+    max-width: none;
+  }
+}
