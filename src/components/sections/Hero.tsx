@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { profile } from '../../data/resume'
 import { easeOut, staggerContainer, staggerItem } from '../../motion'
@@ -7,17 +8,74 @@ const MARS_VIDEO = '/images/Mars_Rotation_Web_HB_d96299f9de.mp4'
 
 type HeroProps = { ready: boolean }
 
+function useBackgroundVideo(active: boolean) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    video.muted = true
+    video.defaultMuted = true
+    video.setAttribute('muted', '')
+    video.setAttribute('playsinline', '')
+    video.setAttribute('webkit-playsinline', '')
+
+    const play = () => {
+      void video.play().catch(() => {})
+    }
+
+    play()
+    video.addEventListener('loadeddata', play)
+    video.addEventListener('canplay', play)
+    video.addEventListener('ended', play)
+
+    const onVisibility = () => {
+      if (document.visibilityState === 'visible') play()
+    }
+
+    const unlockOnTouch = () => play()
+
+    document.addEventListener('visibilitychange', onVisibility)
+    document.addEventListener('touchstart', unlockOnTouch, { passive: true })
+    window.addEventListener('pageshow', play)
+
+    return () => {
+      video.removeEventListener('loadeddata', play)
+      video.removeEventListener('canplay', play)
+      video.removeEventListener('ended', play)
+      document.removeEventListener('visibilitychange', onVisibility)
+      document.removeEventListener('touchstart', unlockOnTouch)
+      window.removeEventListener('pageshow', play)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!active) return
+    videoRef.current?.play().catch(() => {})
+  }, [active])
+
+  return videoRef
+}
+
 export function Hero({ ready }: HeroProps) {
+  const videoRef = useBackgroundVideo(ready)
+
   return (
     <section className="hero" id="top">
       <div className="hero__bg" aria-hidden="true">
         <video
+          ref={videoRef}
           className="hero__video"
           src={MARS_VIDEO}
           autoPlay
           loop
           muted
           playsInline
+          preload="auto"
+          disablePictureInPicture
+          disableRemotePlayback
+          tabIndex={-1}
         />
         <div className="hero__overlay" />
       </div>
