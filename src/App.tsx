@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import { EngineeringBackdrop } from './components/EngineeringBackdrop'
 import { LoadingScreen } from './components/LoadingScreen'
 import { Navbar } from './components/Navbar'
@@ -48,6 +49,7 @@ function App() {
         <ContactFooter />
       </div>
       <Analytics />
+      <SpeedInsights />
     </SmoothScrollProvider>
   )
 }
