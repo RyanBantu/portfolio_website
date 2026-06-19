@@ -94,6 +94,10 @@ export function Hero({ ready }: HeroProps) {
             </span>
           </motion.h1>
 
+          <motion.p className="hero__role" variants={staggerItem}>
+            {profile.title}
+          </motion.p>
+
           <motion.p className="hero__headline" variants={staggerItem}>
             {profile.headline}
           </motion.p>

@@ -70,7 +70,7 @@
 }
 
 .hero__title {
-  margin: 0 0 1.5rem;
+  margin: 0 0 0.85rem;
   font-size: clamp(3rem, 8vw, 5.5rem);
   font-weight: 800;
   line-height: 0.95;
@@ -84,6 +84,16 @@
 
 .hero__title-line--dim {
   color: rgba(255, 255, 255, 0.55);
+}
+
+.hero__role {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-mono);
+  font-size: clamp(0.62rem, 1.4vw, 0.72rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .hero__headline {

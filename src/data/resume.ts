@@ -1,6 +1,7 @@
 export const profile = {
   name: 'Ryan Bantu',
   fullName: 'Ryan Elisha Bantu',
+  title: 'Software Engineer',
   roles: ['Founder', 'Engineer', 'Builder'],
   headline:
     'Designing autonomous systems at the intersection of robotics, embedded intelligence, and computer vision.',
