@@ -1,70 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion'
 import { useLenis } from 'lenis/react'
 import { ease } from './motion'
-
-/* ───────── Starfield: twinkling parallax stars + occasional meteor ───────── */
-
-export function Starfield() {
-  const ref = useRef<HTMLCanvasElement>(null)
-
-  useEffect(() => {
-    const canvas = ref.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    let w = 0
-    let h = 0
-    let raf = 0
-    const dpr = Math.min(window.devicePixelRatio || 1, 2)
-    type Star = { x: number; y: number; z: number; r: number; t: number; hue: number }
-    let stars: Star[] = []
-
-    const resize = () => {
-      w = window.innerWidth
-      h = window.innerHeight
-      canvas.width = w * dpr
-      canvas.height = h * dpr
-      canvas.style.width = `${w}px`
-      canvas.style.height = `${h}px`
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
-      const count = Math.round((w * h) / 7000)
-      stars = Array.from({ length: count }, () => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        z: Math.random() * 0.8 + 0.2,
-        r: Math.random() * 1.2 + 0.2,
-        t: Math.random() * Math.PI * 2,
-        hue: 220,
-      }))
-    }
-
-    const draw = (time: number) => {
-      ctx.clearRect(0, 0, w, h)
-      const scroll = window.scrollY
-      for (const s of stars) {
-        const y = (((s.y - scroll * s.z * 0.15) % h) + h) % h
-        const a = 0.3 + 0.4 * Math.abs(Math.sin(s.t + time * 0.0003 * s.z))
-        ctx.fillStyle = `hsla(${s.hue}, 90%, ${s.hue === 220 ? 92 : 72}%, ${a * s.z})`
-        ctx.beginPath()
-        ctx.arc(s.x, y, s.r * s.z, 0, Math.PI * 2)
-        ctx.fill()
-      }
-      if (!reduce) raf = requestAnimationFrame(draw)
-    }
-
-    resize()
-    draw(0)
-    window.addEventListener('resize', resize)
-    return () => {
-      cancelAnimationFrame(raf)
-      window.removeEventListener('resize', resize)
-    }
-  }, [])
-
-  return <canvas ref={ref} className="starfield" aria-hidden="true" />
-}
 
 /* ───────── Navbar ───────── */
 

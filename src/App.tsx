@@ -3,7 +3,7 @@ import { ReactLenis } from 'lenis/react'
 import 'lenis/dist/lenis.css'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
-import { Navbar, Starfield } from './components/chrome'
+import { Navbar } from './components/chrome'
 import { Loader } from './components/Loader'
 import { Deployments } from './components/GoPerch'
 import { Hero } from './components/Hero'
@@ -26,7 +26,6 @@ function App() {
   const site = (
     <LightboxProvider>
       <Loader show={loading} />
-      <Starfield />
       <Navbar />
       <main>
         <Hero ready={!loading} />
