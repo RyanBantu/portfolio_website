@@ -1,25 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --bg: #07050d;
-  --bg-2: #0e0a1a;
+  --bg: #0b0b0c;
+  --bg-2: #121214;
   --surface: rgba(255, 255, 255, 0.035);
   --surface-2: rgba(255, 255, 255, 0.06);
-  --line: rgba(255, 255, 255, 0.09);
-  --line-2: rgba(255, 255, 255, 0.18);
-  --text: #efeaf7;
-  --muted: #a8a1bd;
-  --faint: #6d6684;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-2: rgba(255, 255, 255, 0.16);
+  --text: #ececec;
+  --muted: #a3a3a8;
+  --faint: #6e6e74;
 
-  --mars: #ff5b2e;
-  --amber: #ffb547;
-  --pink: #ff3d81;
-  --violet: #8b5cf6;
-  --cyan: #3ee6ff;
-  --green: #3dffa8;
+  --mars: #e8592d;
+  --amber: #d9a441;
+  --pink: #c9c9cf;
+  --violet: #b4b4ba;
+  --cyan: #8fb4d6;
+  --green: #5cc98e;
 
-  --grad-hot: linear-gradient(100deg, #ffb547 0%, #ff5b2e 40%, #ff3d81 75%, #8b5cf6 100%);
-  --grad-cool: linear-gradient(100deg, #3ee6ff 0%, #8b5cf6 60%, #ff3d81 100%);
+  --grad-hot: linear-gradient(var(--mars), var(--mars));
+  --grad-cool: linear-gradient(var(--text), var(--text));
 
   --font-display: 'Syne', system-ui, sans-serif;
   --font-body: 'Syne', system-ui, sans-serif;
@@ -60,10 +60,7 @@ body {
   margin: 0;
   min-height: 100svh;
   overflow-x: hidden;
-  background:
-    radial-gradient(1200px 800px at 85% -10%, rgba(139, 92, 246, 0.14), transparent 60%),
-    radial-gradient(900px 700px at -10% 40%, rgba(255, 91, 46, 0.08), transparent 60%),
-    var(--bg);
+  background: var(--bg);
 }
 
 a {
