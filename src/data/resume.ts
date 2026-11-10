@@ -84,8 +84,8 @@ export const thesis = {
 export const fieldPhotos = [
   {
     src: '/images/field-onsite.jpg',
-    alt: 'Ryan on site with a client',
-    caption: 'On site with a client',
+    alt: 'Ryan at an automated site in Michigan',
+    caption: 'Automated sites in Michigan',
   },
   {
     src: '/images/field-gantry-robot.jpg',
