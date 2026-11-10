@@ -4,9 +4,9 @@ export const siteUrl = 'https://ryanbantu.com'
 
 export const seo = {
   siteUrl,
-  title: 'Ryan Bantu · Founder, Engineer · Robotics & Edge AI',
+  title: 'Ryan Bantu · Forward Deployed Engineer · Efficient AI Hardware',
   description:
-    'Ryan Elisha Bantu — Founder of GoPerch Innovations building robotics, embedded systems, and computer vision. Edge AI on Raspberry Pi to AWS Bedrock LLM orchestration; 40+ enterprise deployments; Solar Decathlon India national winner; Project VAYU patent holder.',
+    'Ryan Elisha Bantu, forward deployed engineer with a mechanical engineering background, working on making AI cheaper to run: AI-efficient chips for local inference, efficient algorithms, edge robotics and climate tech. Inventor on patent application 202541112613; IEEE SCPGCON 2026 author; Solar Decathlon India national winner; founder of GoPerch.',
   keywords: [
     'Ryan Bantu',
     'Ryan Elisha Bantu',
@@ -33,8 +33,8 @@ export const seo = {
   locale: 'en_US',
   language: 'en',
   ogImage: `${siteUrl}/images/hero-intro.png`,
-  ogImageAlt: `${profile.name} — portfolio showcasing robotics, embedded systems, and computer vision work`,
-  themeColor: '#030303',
+  ogImageAlt: `${profile.name}: portfolio showcasing robotics, embedded systems, and computer vision work`,
+  themeColor: '#07050d',
 }
 
 function escapeHtml(value: string): string {
