@@ -1,25 +1,5 @@
 /* Hand-drawn SVG flags (emoji flags don't render on Windows and look out of place). */
 
-function UsFlag() {
-  const stars = []
-  for (let r = 0; r < 9; r++) {
-    const n = r % 2 === 0 ? 6 : 5
-    for (let c = 0; c < n; c++) {
-      const x = (r % 2 === 0 ? 0.063 : 0.126) + c * 0.126
-      stars.push(<circle key={`${r}-${c}`} cx={x * 76} cy={(0.054 + r * 0.054) * 40} r="0.85" fill="#fff" />)
-    }
-  }
-  return (
-    <svg viewBox="0 0 76 40" role="img" aria-label="Flag of the United States">
-      {Array.from({ length: 13 }).map((_, i) => (
-        <rect key={i} y={(i * 40) / 13} width="76" height={40 / 13 + 0.05} fill={i % 2 === 0 ? '#B22234' : '#fff'} />
-      ))}
-      <rect width="30.4" height={(40 * 7) / 13} fill="#3C3B6E" />
-      {stars}
-    </svg>
-  )
-}
-
 function star(cx: number, cy: number, R: number) {
   const pts: string[] = []
   for (let i = 0; i < 10; i++) {
@@ -65,12 +45,8 @@ export function Flags() {
         <span>Texas</span>
       </li>
       <li>
-        <UsFlag />
-        <span>United States</span>
-      </li>
-      <li>
         <IndiaFlag />
-        <span>India</span>
+        <span>Hyderabad</span>
       </li>
     </ul>
   )
