@@ -2161,19 +2161,17 @@ main,
 .contact__planet {
   position: absolute;
   left: 50%;
-  bottom: -70vw;
-  width: 120vw;
+  bottom: 0;
+  width: min(820px, 125vw);
   aspect-ratio: 1;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: radial-gradient(circle at 50% 0%, #ff8a4c 0%, #c2410c 18%, #4a1206 40%, #07050d 62%);
-  box-shadow: 0 -20px 120px rgba(255, 91, 46, 0.35);
-  opacity: 0.65;
+  transform: translate(-50%, 36%);
+  background: url('/images/mars-to-earth.jpg') center / contain no-repeat;
+  mix-blend-mode: screen;
   pointer-events: none;
 }
-@media (min-width: 900px) {
+@media (max-width: 700px) {
   .contact__planet {
-    bottom: -95vw;
+    transform: translate(-50%, 34%);
   }
 }
 .contact__inner {
@@ -2394,4 +2392,35 @@ main,
     grid-template-columns: 340px 1fr;
     gap: 3.5rem;
   }
+}
+
+/* footer: own background so the planet's black frame screen-blends away */
+.contact {
+  background: var(--bg);
+  padding-bottom: clamp(25rem, 72vw, 34rem);
+}
+.contact__fine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1.5rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+  z-index: 1;
+  text-shadow: 0 1px 8px #000;
+}
+.contact__inner {
+  position: static;
+}
+
+.contact__credit {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.68rem;
+  opacity: 0.75;
+}
+.contact__credit a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }

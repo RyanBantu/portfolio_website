@@ -292,6 +292,13 @@ export function Contact() {
         </Reveal>
         <p className="contact__fine">
           © {new Date().getFullYear()} {profile.fullName} · Forward Deployed Engineer
+          <span className="contact__credit">
+            Planet textures:{' '}
+            <a href="https://www.solarsystemscope.com/textures/" target="_blank" rel="noreferrer">
+              Solar System Scope
+            </a>
+            , CC BY 4.0
+          </span>
         </p>
       </div>
     </footer>
